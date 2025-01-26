@@ -21,5 +21,12 @@ def add_tema():
 
     return '', 204
 
+@app.route('/tema/<int:id>', methods=['DELETE'])
+def delete_tema(id):
+    print(f"Deletando o tema com id {id}")
+    dao_tema.excluir(id)
+
+    return '', 204
+
 if __name__ == '__main__':
     app.run(debug=True)
